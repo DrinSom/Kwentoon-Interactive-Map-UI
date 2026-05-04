@@ -37,21 +37,15 @@ container.addEventListener("pointerdown", (e) => {
     container.setPointerCapture(e.pointerId);
     container.style.cursor = "grabbing";
 
-    startX = e.clientX;
-    startY = e.clientY;
+    startX = e.clientX - posX;
+    startY = e.clientY - posY;
 });
 
 container.addEventListener("pointermove", (e) => {
     if (!isDragging) return;
 
-    const dx = e.clientX - startX;
-    const dy = e.clientY - startY;
-
-    posX += dx;
-    posY += dy;
-
-    startX = e.clientX;
-    startY = e.clientY;
+    posX = e.clientX - startX;
+    posY = e.clientY - startY;
 
     updateTransform();
 });
@@ -100,3 +94,19 @@ function prevPage(btn) {
     index = (index - 1 + pages.length) % pages.length;
     pages[index].classList.add("active");
 }
+
+function getScaleFactor() {
+    const baseWidth = 1920;
+    return Math.min(window.innerWidth / baseWidth, 1);
+}
+
+function applyUIScale() {
+    const scale = getScaleFactor();
+
+    document.querySelectorAll(".panel").forEach(panel => {
+        panel.style.transform = `translate(-50%, -50%) scale(${scale})`;
+    });
+}
+
+window.addEventListener("resize", applyUIScale);
+applyUIScale();
