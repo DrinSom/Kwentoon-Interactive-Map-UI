@@ -1,0 +1,236 @@
+/* BASE */
+html, body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    background: #0f172a;
+    font-family: "Poppins", sans-serif;
+}
+
+/* VIEWPORT */
+.viewport {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* MAP WRAPPER */
+.map-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    aspect-ratio: 16 / 9; 
+}
+
+/* IMAGE */
+.map-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* ZOOM CONTAINER */
+#zoomContainer {
+    cursor: grab;
+    transition: transform 0.1s ease-out;
+}
+
+/* HOTSPOTS */
+.hotspot {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+    /* SCALE WITH SCREEN */
+    .hotspot.small img {
+        width: 9vw;
+        height: auto;
+    }
+
+    .hotspot.medium img {
+        width: 12vw;
+        height: auto;
+    }
+
+    .hotspot.large img {
+        width: 16vw;
+        height: auto;
+    }
+
+    .hotspot img {
+        transition: transform 0.2s;
+    }
+
+    .hotspot:hover img {
+        transform: scale(1.2);
+        filter: drop-shadow(0 0 6px cyan);
+    }
+
+/* ZOOM BUTTONS */
+.zoom-controls {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 300;
+}
+
+    .zoom-controls button {
+        background: orange;
+        border: none;
+        color: white;
+        width: 40px;
+        height: 40px;
+        margin: 5px;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+        .zoom-controls button:hover {
+            background: #dc2626;
+        }
+
+/* OVERLAY */
+.overlay {
+    display: none;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.4);
+    z-index: 200;
+}
+
+    .overlay.active {
+        display: block;
+    }
+
+/* PANELS */
+.panel {
+    position: fixed; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0;
+    background: #d9e1e8;
+    border: 4px solid #1f2937;
+    border-radius: 20px;
+    width: min(90vw, 600px); 
+    height: min(80vh, 350px); 
+
+    padding: 20px;
+    z-index: 201;
+    pointer-events: none;
+    transition: all 0.25s ease;
+}
+
+    .panel.active {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+        pointer-events: auto;
+    }
+
+/* PANEL CONTENT */
+.panel-content {
+    display: flex;
+    gap: 20px;
+    height: 100%;
+}
+
+/* IMAGE SIDE */
+.panel-image {
+    width: 40%;
+    min-width: 120px;
+}
+
+    .panel-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border: 3px solid #1f2937;
+        border-radius: 8px;
+    }
+
+/* TEXT SIDE */
+.panel-text {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+}
+
+    .panel-text h2 {
+        margin: 0;
+        font-size: 18px;
+    }
+
+    .panel-text p {
+        font-size: 13px;
+        margin-top: 10px;
+        overflow-y: auto;
+    }
+
+        /* SCROLLBAR */
+        .panel-text p::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .panel-text p::-webkit-scrollbar-thumb {
+            background: #1f2937;
+            border-radius: 3px;
+        }
+
+/* CLOSE BUTTON */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: orange;
+    border: none;
+    color: white;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+    .close-btn:hover {
+        background: #dc2626;
+    }
+
+/* THIS IS FOR MULTI-PAGE PANEL */
+.page {
+    display: none;
+    height: 100%;
+}
+
+    .page.active {
+        display: block;
+    }
+
+/* NAV BUTTONS */
+.panel-nav {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+    .panel-nav button {
+        background: orange;
+        border: none;
+        color: white;
+        padding: 5px 10px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+        .panel-nav button:hover {
+            background: #dc2626;
+        }
