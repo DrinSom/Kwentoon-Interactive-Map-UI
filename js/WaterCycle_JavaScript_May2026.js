@@ -61,9 +61,7 @@ function stopDrag() {
 /* PANELS */
 function openPanel(id) {
     document.getElementById("overlay").classList.add("active");
-    const panel = document.getElementById(id);
-    panel.classList.add("active");
-    applyUIScale();
+    document.getElementById(id).classList.add("active");
 }
 
 function closePanel() {
@@ -96,30 +94,3 @@ function prevPage(btn) {
     index = (index - 1 + pages.length) % pages.length;
     pages[index].classList.add("active");
 }
-
-/* PANEL SCALE */
-function getPanelScale() {
-    const baseWidth = 1920;
-    const baseHeight = 1080;
-
-    const scaleW = window.innerWidth / baseWidth;
-    const scaleH = window.innerHeight / baseHeight;
-
-    const scale = Math.min(scaleW, scaleH);
-
-    if (window.innerWidth <= 768) {
-        return 1.2;
-    }
-
-    return Math.max(0.9, Math.min(scale, 1));
-}
-
-function applyUIScale() {
-    document.querySelectorAll(".panel").forEach(panel => {
-        panel.style.transform = "translate(-50%, -50%)";
-    });
-}
-
-window.addEventListener("resize", applyUIScale);
-window.addEventListener("load", applyUIScale);
-applyUIScale();
