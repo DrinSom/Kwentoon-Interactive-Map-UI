@@ -95,18 +95,31 @@ function prevPage(btn) {
     pages[index].classList.add("active");
 }
 
-function getScaleFactor() {
+/* PANEL SCALE */
+function getPanelScale() {
     const baseWidth = 1920;
-    return Math.min(window.innerWidth / baseWidth, 1);
+    let s = window.innerWidth / baseWidth;
+
+    if (window.innerWidth < 768) {
+        s = 1;
+    }
+
+    return Math.max(0.9, Math.min(s, 1));
 }
 
 function applyUIScale() {
-    const scale = getScaleFactor();
+    const scale = getPanelScale();
 
     document.querySelectorAll(".panel").forEach(panel => {
-        panel.style.transform = `translate(-50%, -50%) scale(${scale})`;
+        panel.dataset.scale = scale;
+        if (panel.classList.contains("active")) {
+            panel.style.transform = `translate(-50%, -50%) scale(${scale})`;
+        } else {
+            panel.style.transform = `translate(-50%, -50%) scale(0.9)`;
+        }
     });
 }
 
 window.addEventListener("resize", applyUIScale);
+window.addEventListener("load", applyUIScale);
 applyUIScale();
