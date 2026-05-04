@@ -25,17 +25,42 @@ function updateTransform() {
     container.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`;
 }
 
-/* DRAG */
+/* DRAG STATE */
 let isDragging = false;
 let startX = 0;
 let startY = 0;
 
+/* PC CLICK + DRAG */
+container.addEventListener("mousedown", (e) => {
+    if (e.target.closest(".hotspot")) return;
+
+    isDragging = true;
+    container.style.cursor = "grabbing";
+
+    startX = e.clientX - posX;
+    startY = e.clientY - posY;
+
+    e.preventDefault();
+});
+
+document.addEventListener("mousemove", (e) => {
+    if (!isDragging) return;
+
+    posX = e.clientX - startX;
+    posY = e.clientY - startY;
+
+    updateTransform();
+});
+
+document.addEventListener("mouseup", stopDrag);
+
+/* MOBILE TOUCH DRAG */
 container.addEventListener("pointerdown", (e) => {
+    if (e.pointerType === "mouse") return;
     if (e.target.closest(".hotspot")) return;
 
     isDragging = true;
     container.setPointerCapture(e.pointerId);
-    container.style.cursor = "grabbing";
 
     startX = e.clientX - posX;
     startY = e.clientY - posY;
@@ -43,6 +68,7 @@ container.addEventListener("pointerdown", (e) => {
 
 container.addEventListener("pointermove", (e) => {
     if (!isDragging) return;
+    if (e.pointerType === "mouse") return;
 
     posX = e.clientX - startX;
     posY = e.clientY - startY;
@@ -53,6 +79,7 @@ container.addEventListener("pointermove", (e) => {
 container.addEventListener("pointerup", stopDrag);
 container.addEventListener("pointercancel", stopDrag);
 
+/* STOP */
 function stopDrag() {
     isDragging = false;
     container.style.cursor = "grab";
