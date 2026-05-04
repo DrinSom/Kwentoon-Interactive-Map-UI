@@ -1,4 +1,3 @@
-
 /* BASE */
 html, body {
     margin: 0;
@@ -40,10 +39,7 @@ html, body {
     touch-action: none;
 }
 
-/* =========================
-   HOTSPOTS (UNCHANGED LOGIC)
-========================= */
-
+/* HOTSPOTS */
 .hotspot {
     position: absolute;
     transform: translate(-50%, -50%);
@@ -52,30 +48,29 @@ html, body {
     cursor: pointer;
 }
 
-/* HOTSPOT SIZES */
-.hotspot.small img {
-    width: 9vw;
-    height: auto;
-}
+    .hotspot.small img {
+        width: 9vw;
+        height: auto;
+    }
 
-.hotspot.medium img {
-    width: 12vw;
-    height: auto;
-}
+    .hotspot.medium img {
+        width: 12vw;
+        height: auto;
+    }
 
-.hotspot.large img {
-    width: 16vw;
-    height: auto;
-}
+    .hotspot.large img {
+        width: 16vw;
+        height: auto;
+    }
 
-.hotspot img {
-    transition: transform 0.2s;
-}
+    .hotspot img {
+        transition: transform 0.2s;
+    }
 
-.hotspot:hover img {
-    transform: scale(1.2);
-    filter: drop-shadow(0 0 6px cyan);
-}
+    .hotspot:hover img {
+        transform: scale(1.2);
+        filter: drop-shadow(0 0 6px cyan);
+    }
 
 /* ZOOM CONTROLS */
 .zoom-controls {
@@ -85,20 +80,20 @@ html, body {
     z-index: 300;
 }
 
-.zoom-controls button {
-    background: orange;
-    border: none;
-    color: white;
-    width: 40px;
-    height: 40px;
-    margin: 5px;
-    border-radius: 8px;
-    cursor: pointer;
-}
+    .zoom-controls button {
+        background: orange;
+        border: none;
+        color: white;
+        width: 40px;
+        height: 40px;
+        margin: 5px;
+        border-radius: 8px;
+        cursor: pointer;
+    }
 
-.zoom-controls button:hover {
-    background: #dc2626;
-}
+        .zoom-controls button:hover {
+            background: #dc2626;
+        }
 
 /* OVERLAY */
 .overlay {
@@ -112,67 +107,34 @@ html, body {
     z-index: 200;
 }
 
-.overlay.active {
-    display: block;
-}
+    .overlay.active {
+        display: block;
+    }
 
-/* =========================
-   UI SCALE SYSTEM (GLOBAL)
-========================= */
-
-:root {
-    --ui-scale: 1;
-}
-
-@media (max-width: 1200px) {
-    :root { --ui-scale: 0.95; }
-}
-
-@media (max-width: 900px) {
-    :root { --ui-scale: 0.85; }
-}
-
-@media (max-width: 600px) {
-    :root { --ui-scale: 0.7; }
-}
-
-@media (max-width: 400px) {
-    :root { --ui-scale: 0.6; }
-}
-
-/* =========================
-   PANEL (FIXED UI DESIGN)
-========================= */
-
+/* PANEL */
 .panel {
     position: fixed;
     top: 50%;
     left: 50%;
-
-    width: 600px;
-    height: 337px; /* fixed 16:9 design */
-
-    transform: translate(-50%, -50%) scale(var(--ui-scale));
-    transform-origin: center;
-
+    transform: translate(-50%, -50%) scale(0.9);
     opacity: 0;
-
     background: #d9e1e8;
     border: 4px solid #1f2937;
     border-radius: 20px;
-
+    width: min(90vw, 600px);
+    aspect-ratio: 16 / 9;
     padding: 16px;
     z-index: 201;
     pointer-events: none;
-
+    transition: all 0.25s ease;
     overflow: hidden;
-    transition: opacity 0.25s ease;
 }
 
-.panel.active {
-    opacity: 1;
-    pointer-events: auto;
-}
+    .panel.active {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+        pointer-events: auto;
+    }
 
 /* PANEL CONTENT */
 .panel-content {
@@ -183,50 +145,47 @@ html, body {
 
 /* PANEL IMAGE */
 .panel-image {
-    width: 40%;
+    flex: 0 0 40%;
     height: 100%;
 }
 
-.panel-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-
-    border: 3px solid #1f2937;
-    border-radius: 8px;
-}
+    .panel-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border: 3px solid #1f2937;
+        border-radius: 8px;
+    }
 
 /* PANEL TEXT */
 .panel-text {
-    width: 60%;
+    flex: 1;
     display: flex;
     flex-direction: column;
     overflow: hidden;
 }
 
-/* TITLE */
-.panel-text h2 {
-    margin: 0;
-    font-size: 18px;
-}
+    .panel-text h2 {
+        margin: 0;
+        font-size: 18px;
+    }
 
-/* BODY TEXT */
-.panel-text p {
-    font-size: 14px;
-    margin-top: 10px;
-    overflow-y: auto;
-    line-height: 1.4;
-}
+    .panel-text p {
+        font-size: 14px;
+        margin-top: 10px;
+        overflow-y: auto;
+        line-height: 1.4;
+    }
 
-/* SCROLLBAR */
-.panel-text p::-webkit-scrollbar {
-    width: 6px;
-}
+        /* SCROLLBAR */
+        .panel-text p::-webkit-scrollbar {
+            width: 6px;
+        }
 
-.panel-text p::-webkit-scrollbar-thumb {
-    background: #1f2937;
-    border-radius: 3px;
-}
+        .panel-text p::-webkit-scrollbar-thumb {
+            background: #1f2937;
+            border-radius: 3px;
+        }
 
 /* CLOSE BUTTON */
 .close-btn {
@@ -241,9 +200,9 @@ html, body {
     cursor: pointer;
 }
 
-.close-btn:hover {
-    background: #dc2626;
-}
+    .close-btn:hover {
+        background: #dc2626;
+    }
 
 /* PAGE SYSTEM */
 .page {
@@ -251,9 +210,9 @@ html, body {
     height: 100%;
 }
 
-.page.active {
-    display: block;
-}
+    .page.active {
+        display: block;
+    }
 
 /* PANEL NAV */
 .panel-nav {
@@ -264,15 +223,27 @@ html, body {
     gap: 10px;
 }
 
-.panel-nav button {
-    background: orange;
-    border: none;
-    color: white;
-    padding: 5px 10px;
-    cursor: pointer;
-    border-radius: 5px;
-}
+    .panel-nav button {
+        background: orange;
+        border: none;
+        color: white;
+        padding: 5px 10px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
 
-.panel-nav button:hover {
-    background: #dc2626;
+        .panel-nav button:hover {
+            background: #dc2626;
+        }
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .panel {
+        width: 95vw;
+        aspect-ratio: 4 / 3;
+    }
+
+    .panel-content {
+        gap: 10px;
+    }
 }
