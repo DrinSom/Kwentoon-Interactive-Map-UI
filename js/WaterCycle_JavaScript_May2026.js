@@ -22,60 +22,49 @@ function zoomOut() {
 }
 
 function updateTransform() {
-    container.style.transform = `
-        translate(${posX}px, ${posY}px)
-        scale(${scale})
-    `;
+    container.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`;
 }
 
-
-
+/* DRAG */
 let isDragging = false;
-let startX, startY;
+let startX = 0;
+let startY = 0;
 
-container.addEventListener("mousedown", (e) => {
+container.addEventListener("pointerdown", (e) => {
     if (e.target.closest(".hotspot")) return;
 
     isDragging = true;
+    container.setPointerCapture(e.pointerId);
     container.style.cursor = "grabbing";
 
-    startX = e.clientX - posX;
-    startY = e.clientY - posY;
+    startX = e.clientX;
+    startY = e.clientY;
 });
 
-document.addEventListener("mousemove", (e) => {
+container.addEventListener("pointermove", (e) => {
     if (!isDragging) return;
 
-    posX = e.clientX - startX;
-    posY = e.clientY - startY;
+    const dx = e.clientX - startX;
+    const dy = e.clientY - startY;
 
-    applyBounds();
+    posX += dx;
+    posY += dy;
+
+    startX = e.clientX;
+    startY = e.clientY;
+
     updateTransform();
 });
 
-document.addEventListener("mouseup", () => {
+container.addEventListener("pointerup", stopDrag);
+container.addEventListener("pointercancel", stopDrag);
+
+function stopDrag() {
     isDragging = false;
     container.style.cursor = "grab";
-});
-
-container.addEventListener("mouseleave", () => {
-    isDragging = false;
-    container.style.cursor = "grab";
-});
-
-
-
-function applyBounds() {
-    const rect = container.getBoundingClientRect();
-
-    const maxX = (rect.width * scale - rect.width) / 2;
-    const maxY = (rect.height * scale - rect.height) / 2;
-
-    posX = Math.min(maxX, Math.max(-maxX, posX));
-    posY = Math.min(maxY, Math.max(-maxY, posY));
 }
 
-
+/* PANELS */
 function openPanel(id) {
     document.getElementById("overlay").classList.add("active");
     document.getElementById(id).classList.add("active");
@@ -89,7 +78,7 @@ function closePanel() {
     });
 }
 
-
+/* PAGES */
 function nextPage(btn) {
     const panel = btn.closest(".panel");
     const pages = panel.querySelectorAll(".page");
