@@ -97,7 +97,7 @@ function prevPage(btn) {
     pages[index].classList.add("active");
 }
 
-/* PANEL SCALE (FIXED FOR PC + MOBILE + PORTRAIT) */
+/* PANEL SCALE */
 function getPanelScale() {
     const baseWidth = 1920;
     const baseHeight = 1080;
@@ -115,14 +115,8 @@ function getPanelScale() {
 }
 
 function applyUIScale() {
-    const s = getPanelScale();
-
     document.querySelectorAll(".panel").forEach(panel => {
-        if (panel.classList.contains("active")) {
-            panel.style.transform = `translate(-50%, -50%) scale(${s})`;
-        } else {
-            panel.style.transform = `translate(-50%, -50%) scale(0.9)`;
-        }
+        panel.style.transform = "translate(-50%, -50%)";
     });
 }
 
