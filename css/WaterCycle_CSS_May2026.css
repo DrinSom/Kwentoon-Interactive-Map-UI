@@ -1,4 +1,3 @@
-
 /* BASE */
 html, body {
     margin: 0;
@@ -49,18 +48,29 @@ html, body {
     cursor: pointer;
 }
 
-.hotspot.small img { width: 9vw; height: auto; }
-.hotspot.medium img { width: 12vw; height: auto; }
-.hotspot.large img { width: 16vw; height: auto; }
+    .hotspot.small img {
+        width: 9vw;
+        height: auto;
+    }
 
-.hotspot img {
-    transition: transform 0.2s;
-}
+    .hotspot.medium img {
+        width: 12vw;
+        height: auto;
+    }
 
-.hotspot:hover img {
-    transform: scale(1.2);
-    filter: drop-shadow(0 0 6px cyan);
-}
+    .hotspot.large img {
+        width: 16vw;
+        height: auto;
+    }
+
+    .hotspot img {
+        transition: transform 0.2s;
+    }
+
+    .hotspot:hover img {
+        transform: scale(1.2);
+        filter: drop-shadow(0 0 6px cyan);
+    }
 
 /* ZOOM BUTTONS */
 .zoom-controls {
@@ -70,20 +80,20 @@ html, body {
     z-index: 300;
 }
 
-.zoom-controls button {
-    background: orange;
-    border: none;
-    color: white;
-    width: 40px;
-    height: 40px;
-    margin: 5px;
-    border-radius: 8px;
-    cursor: pointer;
-}
+    .zoom-controls button {
+        background: orange;
+        border: none;
+        color: white;
+        width: 40px;
+        height: 40px;
+        margin: 5px;
+        border-radius: 8px;
+        cursor: pointer;
+    }
 
-.zoom-controls button:hover {
-    background: #dc2626;
-}
+        .zoom-controls button:hover {
+            background: #dc2626;
+        }
 
 /* OVERLAY */
 .overlay {
@@ -94,47 +104,42 @@ html, body {
     z-index: 200;
 }
 
-.overlay.active {
-    display: block;
-}
+    .overlay.active {
+        display: block;
+    }
 
-/* PANEL */
+/* =========================
+   PANEL (FIXED SYSTEM CORE)
+   ========================= */
+
 .panel {
     position: fixed;
     top: 50%;
     left: 50%;
-
-    width: 700px;
-    height: 420px;
-
-    max-width: 92vw;
-    max-height: 85dvh;
-
+    width: min(700px, 92vw);
+    height: min(420px, 80dvh);
     transform: translate(-50%, -50%);
-
     background: #d9e1e8;
     border: 4px solid #1f2937;
     border-radius: 20px;
-
     padding: 16px;
-
     display: flex;
     flex-direction: column;
-
     overflow: hidden;
-
     z-index: 201;
-
     opacity: 0;
     pointer-events: none;
 }
 
-.panel.active {
-    opacity: 1;
-    pointer-events: auto;
-}
+    .panel.active {
+        opacity: 1;
+        pointer-events: auto;
+    }
 
-/* CONTENT */
+/* =========================
+   CONTENT LAYOUT (FIXED FLOW)
+   ========================= */
+
 .panel-content {
     display: flex;
     gap: 16px;
@@ -142,20 +147,21 @@ html, body {
     min-height: 0;
 }
 
-/* IMAGE SIDE */
+/* IMAGE (FIXED SIZE BLOCK) */
 .panel-image {
-    width: 40%;
-}
-
-.panel-image img {
-    width: 100%;
+    flex: 0 0 220px;
     height: 100%;
-    object-fit: cover;
-    border: 3px solid #1f2937;
-    border-radius: 8px;
 }
 
-/* TEXT SIDE */
+    .panel-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border: 3px solid #1f2937;
+        border-radius: 8px;
+    }
+
+/* TEXT (PROPER FLEX SCROLL SYSTEM) */
 .panel-text {
     flex: 1;
     display: flex;
@@ -163,32 +169,34 @@ html, body {
     min-height: 0;
 }
 
-/* TITLE */
-.panel-text h2 {
-    margin: 0;
-    font-size: 24px;
-}
+    /* TITLE */
+    .panel-text h2 {
+        margin: 0;
+        font-size: 24px;
+    }
 
-/* SCROLLABLE TEXT */
-.panel-text p {
-    flex: 1;
-    min-height: 0;
+    /* SCROLLABLE CONTENT (FIXED) */
+    .panel-text p {
+        flex: 1;
+        min-height: 0;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        font-size: 15px;
+        line-height: 1.5;
+        margin-top: 10px;
+    }
 
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
+/* =========================
+   MOBILE STACK
+   ========================= */
 
-    font-size: 15px;
-    line-height: 1.5;
-    margin-top: 10px;
-}
-
-/* MOBILE STACK */
 @media (max-width: 768px) {
     .panel-content {
         flex-direction: column;
     }
 
     .panel-image {
+        flex: none;
         width: 100%;
         height: 180px;
     }
@@ -207,9 +215,9 @@ html, body {
     cursor: pointer;
 }
 
-.close-btn:hover {
-    background: #dc2626;
-}
+    .close-btn:hover {
+        background: #dc2626;
+    }
 
 /* PAGES */
 .page {
@@ -217,9 +225,9 @@ html, body {
     height: 100%;
 }
 
-.page.active {
-    display: block;
-}
+    .page.active {
+        display: block;
+    }
 
 /* NAV */
 .panel-nav {
@@ -230,15 +238,15 @@ html, body {
     gap: 10px;
 }
 
-.panel-nav button {
-    background: orange;
-    border: none;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-}
+    .panel-nav button {
+        background: orange;
+        border: none;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
 
-.panel-nav button:hover {
-    background: #dc2626;
-}
+        .panel-nav button:hover {
+            background: #dc2626;
+        }
