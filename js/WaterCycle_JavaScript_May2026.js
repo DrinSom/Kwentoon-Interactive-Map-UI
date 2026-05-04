@@ -61,7 +61,9 @@ function stopDrag() {
 /* PANELS */
 function openPanel(id) {
     document.getElementById("overlay").classList.add("active");
-    document.getElementById(id).classList.add("active");
+    const panel = document.getElementById(id);
+    panel.classList.add("active");
+    applyUIScale();
 }
 
 function closePanel() {
@@ -95,25 +97,29 @@ function prevPage(btn) {
     pages[index].classList.add("active");
 }
 
-/* PANEL SCALE */
+/* PANEL SCALE (FIXED FOR PC + MOBILE + PORTRAIT) */
 function getPanelScale() {
     const baseWidth = 1920;
-    let s = window.innerWidth / baseWidth;
+    const baseHeight = 1080;
 
-    if (window.innerWidth < 768) {
-        s = 1;
+    const scaleW = window.innerWidth / baseWidth;
+    const scaleH = window.innerHeight / baseHeight;
+
+    const scale = Math.min(scaleW, scaleH);
+
+    if (window.innerWidth <= 768) {
+        return 1.2;
     }
 
-    return Math.max(0.9, Math.min(s, 1));
+    return Math.max(0.9, Math.min(scale, 1));
 }
 
 function applyUIScale() {
-    const scale = getPanelScale();
+    const s = getPanelScale();
 
     document.querySelectorAll(".panel").forEach(panel => {
-        panel.dataset.scale = scale;
         if (panel.classList.contains("active")) {
-            panel.style.transform = `translate(-50%, -50%) scale(${scale})`;
+            panel.style.transform = `translate(-50%, -50%) scale(${s})`;
         } else {
             panel.style.transform = `translate(-50%, -50%) scale(0.9)`;
         }
