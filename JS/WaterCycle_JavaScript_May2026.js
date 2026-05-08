@@ -125,18 +125,3 @@ function prevPage(btn) {
     index = (index - 1 + pages.length) % pages.length;
     pages[index].classList.add("active");
 }
-
-/* FOR VARYING DEVICES */
-function loadCSS() {
-    const css = document.getElementById("device-css");
-
-    if (window.innerWidth <= 768) {
-        href = "CSS/WaterCycle_Mobile_May2026.css";
-    } else {
-        href = "CSS/WaterCycle_Desktop_May2026.css";
-    }
-}
-
-loadCSS();
-
-window.addEventListener("resize", loadCSS);
