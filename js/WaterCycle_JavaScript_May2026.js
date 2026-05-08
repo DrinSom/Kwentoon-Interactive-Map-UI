@@ -126,7 +126,7 @@ function prevPage(btn) {
     pages[index].classList.add("active");
 }
 
-/* FOR VARYING DEVICS */
+/* FOR VARYING DEVICES */
 function loadCSS() {
     const css = document.getElementById("device-css");
 
