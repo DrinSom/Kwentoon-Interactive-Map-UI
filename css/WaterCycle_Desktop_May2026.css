@@ -109,7 +109,6 @@ html, body {
     }
 
 /* PANEL */
-
 .panel {
     position: fixed;
     top: 50%;
@@ -134,42 +133,53 @@ html, body {
         pointer-events: auto;
     }
 
+/* PANEL CONTENT */
 .panel-content {
     display: flex;
-    gap: 16px;
+    gap: 20px;
     flex: 1;
     min-height: 0;
 }
 
-/* IMAGE */
+/* IMAGE SIDE */
 .panel-image {
-    flex: 0 0 240px;
-    height: 100%;
-    aspect-ratio: 1/1;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 0;
 }
 
+    /* PERFECT SQUARE IMAGE */
     .panel-image img {
         width: 100%;
-        height: 100%;
+        aspect-ratio: 1 / 1;
         object-fit: cover;
         border: 5px solid black;
+        display: block;
     }
 
-/* TEXT */
+/* TEXT SIDE */
 .panel-text {
     flex: 1;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    min-width: 0;
     min-height: 0;
+    padding-top: 33px;
+    padding-bottom: 33px;
 }
 
     /* TITLE */
     .panel-text h2 {
         margin: 0;
         font-size: 24px;
+        line-height: 1.2;
+        color: #0b1f34;
     }
 
-    /* SCROLLABLE CONTENT (FIXED) */
+    /* SCROLLABLE CONTENT */
     .panel-text p {
         flex: 1;
         min-height: 0;
@@ -179,10 +189,10 @@ html, body {
         line-height: 1.5;
         margin-top: 10px;
         margin-right: 20px;
+        color: #0b1f34;
     }
 
 /* MOBILE STACK */
-
 @media (max-width: 768px) {
     .panel-content {
         flex-direction: column;
@@ -191,8 +201,13 @@ html, body {
     .panel-image {
         flex: none;
         width: 100%;
-        height: 180px;
+        height: auto;
     }
+
+        .panel-image img {
+            width: 100%;
+            max-width: 220px;
+        }
 }
 
 /* CLOSE BUTTON */
