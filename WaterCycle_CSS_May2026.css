@@ -262,7 +262,23 @@ html, body {
         transform: scale(1.06);
         display: block;
     }
-}
+    
+     .hotspot.small img {
+        width: 12vw;
+    }
+
+    .hotspot.medium img {
+        width: 16vw;
+    }
+
+    .hotspot.large img {
+        width: 20vw;
+    }
+
+    /* OPTIONAL: improve tap accuracy on mobile */
+    .hotspot {
+        transform: translate(-50%, -50%) scale(1.05);
+    }
 
     /* VERTICAL on Mobile */
     .panel {
