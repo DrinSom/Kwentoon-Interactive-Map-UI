@@ -167,7 +167,7 @@ html, body {
     flex-direction: column;
     min-height: 0;
     padding-top: 45px;
-
+    
 }
 
     /* TITLE */
@@ -188,7 +188,8 @@ html, body {
         margin-top: 10px;
         color: #0b1f34;
         text-align: justify;
-        padding-right: 12px;
+        padding-right: 20px;
+
     }
 
 /* CLOSE BUTTON */
@@ -262,6 +263,7 @@ html, body {
         gap: 10px;
         flex: 1;
         min-height: 0;
+        padding-top: 30px;
     }
 
     /* IMAGE */
@@ -292,7 +294,7 @@ html, body {
     }
 
         .panel-text h2 {
-            font-size: 22px;
+            font-size: 24px;
             margin: 0;
             text-align: center;
         }
@@ -303,7 +305,7 @@ html, body {
             overflow-y: auto;
             margin-top: 10px;
             margin-right: 0;
-            padding-right: 6px;
+            padding: 10px 20px;
             font-size: 16px;
             line-height: 1.5;
             text-align: justify;
