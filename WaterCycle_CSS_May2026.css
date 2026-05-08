@@ -238,10 +238,6 @@ html, body {
             background: #dc2626;
         }
 
-/* MOBILE STACK */
-
-/* MOBILE STACK */
-
 @media (max-width: 768px) {
 
     /* VERTICAL PANEL */
@@ -318,4 +314,3 @@ html, body {
             padding: 6px 12px;
             font-size: 14px;
         }
-}
