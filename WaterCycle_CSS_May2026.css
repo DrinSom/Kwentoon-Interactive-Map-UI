@@ -263,7 +263,7 @@ html, body {
     /* IMAGE TOP */
     .panel-image {
         flex: none;
-        width: 70%;
+        width: 25%;
         position: relative;
     }
 
