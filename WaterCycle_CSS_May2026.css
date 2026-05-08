@@ -239,6 +239,8 @@ html, body {
         }
 
 
+/* FOR MOBILE */
+
 @media (max-width: 768px) {
 
     /* VERTICAL on Mobile */
@@ -262,7 +264,7 @@ html, body {
     /* IMAGE */
     .panel-image {
         flex: none;
-        width: 100%;
+        width: 30%;
         aspect-ratio: 1/1;
     }
 
@@ -283,7 +285,7 @@ html, body {
     }
 
         .panel-text h2 {
-            font-size: 28px;
+            font-size: 22px;
             margin: 0;
             text-align: center;
         }
@@ -295,7 +297,7 @@ html, body {
             margin-top: 10px;
             margin-right: 0;
             padding-right: 6px;
-            font-size: 20px;
+            font-size: 16px;
             line-height: 1.5;
         }
 
