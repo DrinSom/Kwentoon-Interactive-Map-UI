@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Urban Water Cycle</title>
 
-    <link rel="stylesheet" href="WaterCycle_CSS_May2026.css">
+    <link rel="stylesheet" href="WaterCycle_Desktop_May2026.css">
     <link rel="icon" type="image/png" href="images/Mr Bu_Icon.png">
 </head>
 
@@ -65,196 +65,245 @@
             <button class="hotspot large" style="top:61%; left:65%;" onclick="openPanel('panel10')">
                 <img src="images/WaterCycle_WasteWaterTreatmentButton_April2026.png">
             </button>
+
             <!-- OVERLAY -->
             <div class="overlay" id="overlay" onclick="closePanel()"></div>
         </div>
 
-            <!-- PANEL 1 -->
-            <div class="panel" id="panel1">
-                <button class="close-btn" onclick="closePanel()">✕</button>
+        <!-- PANEL 1 -->
+        <div class="panel" id="panel1">
+            <button class="close-btn" onclick="closePanel()">✕</button>
 
+            <div class="panel-content">
+                <div class="panel-image">
+                    <img src="images/WaterCycle_Evaporation_May2026.png">
+                </div>
+
+                <div class="panel-text">
+                    <h2>EVAPORATION</h2>
+
+                    <p>
+                        Evaporation is when liquid water turns into water vapor because of heat. The sun is the main source of this heat. This process helps move water into the atmosphere.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- PANEL 2 -->
+        <div class="panel" id="panel2">
+            <button class="close-btn" onclick="closePanel()">✕</button>
+
+            <div class="panel-content">
+                <div class="panel-image">
+                    <img src="images/WaterCycle_Condensation_May2026.png">
+                </div>
+
+                <div class="panel-text">
+                    <h2>CONDENSATION</h2>
+
+                    <p>
+                        Condensation happens when water vapor cools and turns into liquid water. 
+                        This is how clouds form in the sky. 
+                        You can also see it as droplets on a cold glass.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- PANEL 3 -->
+        <div class="panel" id="panel3">
+            <button class="close-btn" onclick="closePanel()">✕</button>
+
+            <div class="panel-content">
+                <div class="panel-image">
+                    <img src="images/WaterCycle_Precipitation_May2026.png">
+                </div>
+
+                <div class="panel-text">
+                    <h2>PRECIPITATION</h2>
+
+                    <p>
+                        Precipitation is water that falls from clouds to the Earth.
+                        It can be rain, snow, sleet, or hail. 
+                        It is an important part of the water cycle.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- PANEL 4 -->
+        <div class="panel" id="panel4">
+            <button class="close-btn" onclick="closePanel()">✕</button>
+
+            <div class="panel-content">
+                <div class="panel-image">
+                    <img src="images/WaterCycle_WaterForAgriUse_April2026.png">
+                </div>
+
+                <div class="panel-text">
+                    <h2>WATER FOR AGRICULTURAL USE</h2>
+
+                    <p>
+                        Water for agricultural use is used in farming and food production. It helps irrigate crops and provide water for animals. This is essential for growing food and sustaining agriculture.
+
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- PANEL 5 -->
+        <div class="panel" id="panel5">
+            <button class="close-btn" onclick="closePanel()">✕</button>
+
+            <div class="panel-content">
+                <div class="panel-image">
+                    <img src="images/WaterCycle_BioSolidsFertilizer_May2026.png">
+                </div>
+
+                <div class="panel-text">
+                    <h2>BIO-SOLIDS AS FERTILIZER</h2>
+
+                    <p>
+                        Bio-solids are treated organic materials from wastewater. They can be used as fertilizer to help plants grow. They add nutrients to the soil.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- PANEL 6 -->
+        <div class="panel multi" id="panel6">
+
+            <button class="close-btn" onclick="closePanel()">✕</button>
+
+            <!-- PAGE 1 -->
+            <div class="page active">
                 <div class="panel-content">
+
                     <div class="panel-image">
-                        <img src="images/WaterCycle_SampleEvaporation_April2026.png">
+                        <img src="images/WaterCycle_SewerSysPage1_May2026.png">
                     </div>
+
                     <div class="panel-text">
-                        <h2>EVAPORATION</h2>
+                        <h2>SEWERAGE SYSTEM</h2>
+
                         <p>
-                            Evaporation is when liquid water turns into water vapor because of heat. The sun is the main source of this heat. This process helps move water into the atmosphere.
+                            Sewerage System is the complete system used to manage wastewater from homes, buildings, and industries. It includes collecting sewage, transporting it through pipes, treating it in treatment plants, and safely disposing or reusing the cleaned water. This system helps keep communities clean, prevents pollution, and protects public health.
+
+                            <br><br>
+
+                            <strong>A. Sewer lines</strong> are underground pipes that transport wastewater. They connect homes and buildings to treatment plants. They help prevent pollution and keep waste flowing properly.
+
                         </p>
                     </div>
+
                 </div>
             </div>
 
-            <!-- PANEL 2 -->
-            <div class="panel" id="panel2">
-                <button class="close-btn" onclick="closePanel()">✕</button>
-
+            <!-- PAGE 2 -->
+            <div class="page">
                 <div class="panel-content">
+
                     <div class="panel-image">
-                        <img src="images/WaterCycle_SampleCondensation_April2026.png">
+                        <img src="images/WaterCycle_SewerSysPage2_May2026.png">
                     </div>
+
                     <div class="panel-text">
-                        <h2>CONDENSATION</h2>
+                        <h2>Sewerage System</h2>
+
                         <p>
-                            Condensation happens when water vapor cools and turns into liquid water. This is how clouds form in the sky. You can also see it as droplets on a cold glass.
+                            <strong>B. Septage Collection</strong> 
+                            - Not all homes are connected to sewer lines. In these areas, homes use septic tanks or pits (like a pozo negro). When trucks collect waste from these toilets or pits, it is called septage collection or desludging. The trucks (often called vacuum trucks) suck out the waste for safe transport and proper treatment.
                         </p>
                     </div>
+
                 </div>
             </div>
 
-            <!-- PANEL 3 -->
-            <div class="panel" id="panel3">
-                <button class="close-btn" onclick="closePanel()">✕</button>
-
-                <div class="panel-content">
-                    <div class="panel-image">
-                        <img src="images/WaterCycle_SamplePreciGIF_April2026.gif">
-                    </div>
-                    <div class="panel-text">
-                        <h2>PRECIPITATION</h2>
-                        <p>Precipitation is water that falls from clouds to the Earth. It can be rain, snow, sleet, or hail. It is an important part of the water cycle.</p>
-                    </div>
-                </div>
+            <!-- NAV -->
+            <div class="panel-nav">
+                <button onclick="prevPage(this)">◀</button>
+                <button onclick="nextPage(this)">▶</button>
             </div>
 
-            <!-- PANEL 4 -->
-            <div class="panel" id="panel4">
-                <button class="close-btn" onclick="closePanel()">✕</button>
+        </div>
 
-                <div class="panel-content">
-                    <div class="panel-image">
-                        <img src="images/WaterCycle_INSERTNAMEHERE_April2026.png">
-                    </div>
-                    <div class="panel-text">
-                        <h2>Water for Agricultural Use</h2>
-                        <p>
-                            Water for agricultural use is used in farming and food production. It helps irrigate crops and provide water for animals. This is essential for growing food and sustaining agriculture.
-                        </p>
-                    </div>
+        <!-- PANEL 7 -->
+        <div class="panel" id="panel7">
+            <button class="close-btn" onclick="closePanel()">✕</button>
+
+            <div class="panel-content">
+                <div class="panel-image">
+                    <img src="images/WaterCycle_TreatedWater_May2026.png">
+                </div>
+
+                <div class="panel-text">
+                    <h2>TREATED WATER</h2>
+
+                    <p>
+                        Treated water is water that has been cleaned to remove dirt, waste, and harmful germs. It is usually released into rivers or reused for irrigation and other non-drinking purposes. In the Philippines, it is generally not used for drinking unless it goes through additional treatment.
+                    </p>
                 </div>
             </div>
+        </div>
 
-            <!-- PANEL 5 -->
-            <div class="panel" id="panel5">
-                <button class="close-btn" onclick="closePanel()">✕</button>
+        <!-- PANEL 8 -->
+        <div class="panel" id="panel8">
+            <button class="close-btn" onclick="closePanel()">✕</button>
 
-                <div class="panel-content">
-                    <div class="panel-image">
-                        <img src="images/WaterCycle_INSERTNAMEHERE_April2026.png">
-                    </div>
-                    <div class="panel-text">
-                        <h2>Bio-Solids as Fertilizer</h2>
-                        <p>Bio-solids are treated organic materials from wastewater. They can be used as fertilizer to help plants grow. They add nutrients to the soil.</p>
-                    </div>
+            <div class="panel-content">
+                <div class="panel-image">
+                    <img src="images/WaterCycle_WaterTreatment_May2026.png">
+                </div>
+
+                <div class="panel-text">
+                    <h2>WATER TREATMENT</h2>
+
+                    <p>
+                        Water Treatment is the process of cleaning water so it is safe to use. It removes dirt, bacteria, and harmful chemicals. This makes water safe for drinking and everyday use.
+
+                    </p>
                 </div>
             </div>
+        </div>
 
-            <!-- PANEL 6 -->
-            <div class="panel multi" id="panel6">
+        <!-- PANEL 9 -->
+        <div class="panel" id="panel9">
+            <button class="close-btn" onclick="closePanel()">✕</button>
 
-                <button class="close-btn" onclick="closePanel()">✕</button>
-
-                <!-- PANEL 6: PAGE 1 -->
-                <div class="page active">
-                    <div class="panel-content">
-                        <div class="panel-image">
-                            <img src="images/WaterCycle_SampleSSPage1_April2026.png">
-                        </div>
-                        <div class="panel-text">
-                            <h2>Sewerage System</h2>
-                            <p>
-                                Sewerage System is the complete system used to manage wastewater from homes, buildings, and industries. It includes collecting sewage, transporting it through pipes, treating it in treatment plants, and safely disposing or reusing the cleaned water. This system helps keep communities clean, prevents pollution, and protects public health.
-
-                                <br> <br> <strong>A. Sewer lines </strong> are underground pipes that transport wastewater. They connect homes and buildings to treatment plants. They help prevent pollution and keep waste flowing properly.
-                            </p>
-                        </div>
-                    </div>
+            <div class="panel-content">
+                <div class="panel-image">
+                    <img src="images/WaterCycle_R&CWaterUse_May2026.png">
                 </div>
 
-                <!-- PANEL 6: PAGE 2 -->
-                <div class="page">
-                    <div class="panel-content">
-                        <div class="panel-image">
-                            <img src="images/WaterCycle_SampleSSPage2_April2026.png">
-                        </div>
-                        <div class="panel-text">
-                            <h2>Sewerage System</h2>
-                            <p>
-                                <strong>B. Septage Collection </strong> - Not all homes are connected to sewer lines. In these areas, homes use septic tanks or pits (like a pozo negro). When trucks collect waste from these toilets or pits, it is called septage collection or desludging. The trucks (often called vacuum trucks) suck out the waste for safe transport and proper treatment.
+                <div class="panel-text">
+                    <h2>RESIDENTIAL & COMMERCIAL WATER USE</h2>
 
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- NAV BUTTONS FOR PANEL 6 -->
-                <div class="panel-nav">
-                    <button onclick="prevPage(this)">◀</button>
-                    <button onclick="nextPage(this)">▶</button>
-                </div>
-
-            </div>
-
-            <!-- PANEL 7 -->
-            <div class="panel" id="panel7">
-                <button class="close-btn" onclick="closePanel()">✕</button>
-
-                <div class="panel-content">
-                    <div class="panel-image">
-                        <img src="images/WaterCycle_SampleSSPage1_April2026.png">
-                    </div>
-                    <div class="panel-text">
-                        <h2>Treated Water</h2>
-                        <p>Treated water is water that has been cleaned to remove dirt, waste, and harmful germs. It is usually released into rivers or reused for irrigation and other non-drinking purposes. In the Philippines, it is generally not used for drinking unless it goes through additional treatment.</p>
-                    </div>
+                    <p>
+                        Residential and commercial water use is water used in homes for daily activities like cooking, cleaning, and bathing. Commercial water use is water used in businesses like malls, hotels, and restaurants. Both are important for daily life and services.
+                    </p>
                 </div>
             </div>
+        </div>
 
-            <!-- PANEL 8 -->
-            <div class="panel" id="panel8">
-                <button class="close-btn" onclick="closePanel()">✕</button>
+        <!-- PANEL 10 -->
+        <div class="panel" id="panel10">
+            <button class="close-btn" onclick="closePanel()">✕</button>
 
-                <div class="panel-content">
-                    <div class="panel-image">
-                        <img src="images/WaterCycle_INSERTNAME_April2026.png">
-                    </div>
-                    <div class="panel-text">
-                        <h2>Water Treatment</h2>
-                        <p>Water Treatment is the process of cleaning water so it is safe to use. It removes dirt, bacteria, and harmful chemicals. This makes water safe for drinking and everyday use.</p>
-                    </div>
+            <div class="panel-content">
+                <div class="panel-image">
+                    <img src="images/WaterCycle_WasteWaterTreatment_May2026.png">
+                </div>
+
+                <div class="panel-text">
+                    <h2>WASTEWATER TREATMENT</h2>
+
+                    <p>
+                        Wastewater treatment cleans used water from homes and industries. It removes harmful substances before releasing the water back into the environment. This protects people and ecosystems.
+                    </p>
                 </div>
             </div>
+        </div>
 
-            <!-- PANEL 9 -->
-            <div class="panel" id="panel9">
-                <button class="close-btn" onclick="closePanel()">✕</button>
-
-                <div class="panel-content">
-                    <div class="panel-image">
-                        <img src="images/WaterCycle_INSERTNAME_April2026.png">
-                    </div>
-                    <div class="panel-text">
-                        <h2>Residential & Commercial Water Use</h2>
-                        <p>Residential and commercial water use is water used in homes for daily activities like cooking, cleaning, and bathing. Commercial water use is water used in businesses like malls, hotels, and restaurants. Both are important for daily life and services.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PANEL 10 -->
-            <div class="panel" id="panel10">
-                <button class="close-btn" onclick="closePanel()">✕</button>
-
-                <div class="panel-content">
-                    <div class="panel-image">
-                        <img src="images/WaterCycle_INSERTNAME_April2026.png">
-                    </div>
-                    <div class="panel-text">
-                        <h2>Waste Water Treatment</h2>
-                        <p>Wastewater treatment cleans used water from homes and industries. It removes harmful substances before releasing the water back into the environment. This protects people and ecosystems.</p>
-                    </div>
-                </div>
-            </div>
     </div>
 
     <script src="WaterCycle_JavaScript_May2026.js"> </script>
