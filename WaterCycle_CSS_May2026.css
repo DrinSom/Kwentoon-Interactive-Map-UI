@@ -294,7 +294,7 @@ html, body {
     }
 
         .panel-text h2 {
-            font-size: 24px;
+            font-size: 30px;
             margin: 0;
             text-align: center;
         }
@@ -305,7 +305,7 @@ html, body {
             overflow-y: auto;
             margin-top: 10px;
             margin-right: 0;
-            padding: 10px 20px;
+            padding: 10px 30px 20px 30px;
             font-size: 16px;
             line-height: 1.5;
             text-align: justify;
@@ -314,12 +314,11 @@ html, body {
     /* NAV BUTTONS CENTERED */
     .panel-nav {
         position: static;
-        margin-top: 10px;
+        margin-top: 5px;
         justify-content: center;
         display: flex;
         gap: 10px;
     }
-
         .panel-nav button {
             padding: 6px 12px;
             font-size: 14px;
