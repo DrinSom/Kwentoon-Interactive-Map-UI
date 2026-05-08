@@ -136,7 +136,7 @@ html, body {
 
 .panel-content {
     display: flex;
-    gap: 24px;
+    gap: 20px;
     flex: 1;
     min-height: 0;
 }
@@ -167,6 +167,7 @@ html, body {
     flex-direction: column;
     min-height: 0;
     padding-top: 45px;
+
 }
 
     /* TITLE */
@@ -185,8 +186,9 @@ html, body {
         font-size: 15px;
         line-height: 1.5;
         margin-top: 10px;
-        margin-right: 20px;
         color: #0b1f34;
+        text-align: justify;
+        padding-right: 12px;
     }
 
 /* CLOSE BUTTON */
@@ -213,7 +215,10 @@ html, body {
 }
 
     .page.active {
-        display: block;
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        height: 100%;
     }
 
 /* NAV */
@@ -241,6 +246,7 @@ html, body {
 /* FOR MOBILE */
 
 @media (max-width: 768px) {
+
     /* VERTICAL on Mobile */
     .panel {
         height: min(90dvh, 650px);
@@ -316,4 +322,12 @@ html, body {
             padding: 6px 12px;
             font-size: 14px;
         }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ff914d;
 }
