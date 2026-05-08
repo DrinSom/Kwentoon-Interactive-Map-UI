@@ -257,12 +257,13 @@ html, body {
         gap: 10px;
         flex: 1;
         min-height: 0;
+        justify-content: center;
     }
 
     /* IMAGE TOP */
     .panel-image {
         flex: none;
-        width: 100%;
+        width: 70%;
         position: relative;
     }
 
@@ -324,4 +325,5 @@ html, body {
         }
 
 }
+
 
