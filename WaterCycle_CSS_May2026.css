@@ -1,4 +1,6 @@
-/* BASE */
+/* =========================
+   BASE
+========================= */
 html, body {
     margin: 0;
     height: 100%;
@@ -8,7 +10,9 @@ html, body {
     font-family: "Poppins", sans-serif;
 }
 
-/* VIEWPORT */
+/* =========================
+   VIEWPORT
+========================= */
 .viewport {
     width: 100vw;
     height: 100dvh;
@@ -17,7 +21,9 @@ html, body {
     align-items: center;
 }
 
-/* MAP WRAPPER */
+/* =========================
+   MAP WRAPPER
+========================= */
 .map-wrapper {
     position: relative;
     width: 100%;
@@ -25,7 +31,6 @@ html, body {
     aspect-ratio: 16 / 9;
 }
 
-/* MAP IMAGE */
 .map-image {
     width: 100%;
     height: 100%;
@@ -33,13 +38,17 @@ html, body {
     display: block;
 }
 
-/* ZOOM CONTAINER */
+/* =========================
+   ZOOM
+========================= */
 #zoomContainer {
     cursor: grab;
     touch-action: none;
 }
 
-/* HOTSPOTS */
+/* =========================
+   HOTSPOTS
+========================= */
 .hotspot {
     position: absolute;
     transform: translate(-50%, -50%);
@@ -48,20 +57,9 @@ html, body {
     cursor: pointer;
 }
 
-.hotspot.small img {
-    width: 9vw;
-    height: auto;
-}
-
-.hotspot.medium img {
-    width: 12vw;
-    height: auto;
-}
-
-.hotspot.large img {
-    width: 16vw;
-    height: auto;
-}
+.hotspot.small img { width: 9vw; }
+.hotspot.medium img { width: 12vw; }
+.hotspot.large img { width: 16vw; }
 
 .hotspot img {
     transition: transform 0.2s;
@@ -72,7 +70,9 @@ html, body {
     filter: drop-shadow(0 0 6px cyan);
 }
 
-/* ZOOM BUTTONS */
+/* =========================
+   ZOOM CONTROLS
+========================= */
 .zoom-controls {
     position: fixed;
     bottom: 20px;
@@ -95,7 +95,9 @@ html, body {
     background: #dc2626;
 }
 
-/* OVERLAY */
+/* =========================
+   OVERLAY
+========================= */
 .overlay {
     display: none;
     position: fixed;
@@ -108,16 +110,17 @@ html, body {
     display: block;
 }
 
-/* PANEL */
+/* =========================
+   PANEL (FIXED STRUCTURE)
+========================= */
 .panel {
     position: fixed;
     top: 50%;
     left: 50%;
+    transform: translate(-50%, -50%);
 
     width: min(760px, 92vw);
-    height: min(500px, 85dvh);
-
-    transform: translate(-50%, -50%);
+    height: min(520px, 85dvh);
 
     background: #edf8ff;
     border: 6px solid black;
@@ -141,22 +144,45 @@ html, body {
     pointer-events: auto;
 }
 
-/* PANEL CONTENT */
+/* CLOSE BUTTON */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    background: #ff914d;
+    border: none;
+    color: white;
+
+    width: 34px;
+    height: 34px;
+
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    background: #dc2626;
+}
+
+/* =========================
+   PANEL CONTENT (FIXED FLEX)
+========================= */
 .panel-content {
     display: flex;
     gap: 24px;
+
     flex: 1;
     min-height: 0;
 }
 
-/* IMAGE */
+/* IMAGE SIDE */
 .panel-image {
     flex: 1;
-    min-width: 0;
-
     display: flex;
     justify-content: center;
     align-items: center;
+    min-width: 0;
 }
 
 .panel-image img {
@@ -167,11 +193,10 @@ html, body {
     object-fit: cover;
 
     border: 5px solid black;
-
     display: block;
 }
 
-/* TEXT */
+/* TEXT SIDE */
 .panel-text {
     flex: 1;
     display: flex;
@@ -179,7 +204,7 @@ html, body {
     min-height: 0;
 }
 
-/* TITLE */
+/* TITLE (ALIGNED CLEANLY) */
 .panel-text h2 {
     margin: 0;
     font-size: clamp(22px, 2vw, 32px);
@@ -187,7 +212,7 @@ html, body {
     line-height: 1.1;
 }
 
-/* SCROLL TEXT */
+/* SCROLL FIX (NO ELLIPSIS) */
 .panel-text p {
     flex: 1;
     min-height: 0;
@@ -205,29 +230,7 @@ html, body {
     color: #0b1f34;
 }
 
-/* CLOSE BUTTON */
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-
-    background: #ff914d;
-    border: none;
-    color: white;
-
-    width: 34px;
-    height: 34px;
-
-    border-radius: 8px;
-
-    cursor: pointer;
-}
-
-.close-btn:hover {
-    background: #dc2626;
-}
-
-/* NAV */
+/* NAV BUTTONS */
 .panel-nav {
     position: absolute;
     bottom: 14px;
@@ -243,9 +246,7 @@ html, body {
     color: white;
 
     padding: 6px 12px;
-
     border-radius: 6px;
-
     cursor: pointer;
 }
 
@@ -253,7 +254,9 @@ html, body {
     background: #dc2626;
 }
 
-/* PAGES */
+/* =========================
+   PAGES
+========================= */
 .page {
     display: none;
     height: 100%;
@@ -264,9 +267,9 @@ html, body {
     flex-direction: column;
 }
 
-/* ========================= */
-/* MOBILE FIX (IMPORTANT) */
-/* ========================= */
+/* =========================
+   MOBILE FIX (IMPORTANT)
+========================= */
 @media (max-width: 768px) {
 
     .panel {
@@ -281,18 +284,11 @@ html, body {
         gap: 16px;
     }
 
-    /* IMAGE CENTER FIX */
-    .panel-image {
-        width: 100%;
-        flex: none;
-    }
-
     .panel-image img {
         width: min(220px, 60vw);
         aspect-ratio: 1 / 1;
     }
 
-    /* TEXT */
     .panel-text h2 {
         text-align: center;
         font-size: 22px;
@@ -304,7 +300,6 @@ html, body {
         margin-right: 0;
     }
 
-    /* NAV FIX */
     .panel-nav {
         position: static;
         margin-top: 10px;
