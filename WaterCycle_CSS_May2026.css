@@ -262,9 +262,8 @@ html, body {
 
     /* IMAGE TOP */
     .panel-image {
-        flex: none;
-        width: 25%;
-        position: relative;
+        width: min(70%, 220px);
+        margin: 0 auto;
     }
 
         /* SQUARE IMAGE */
@@ -325,5 +324,3 @@ html, body {
         }
 
 }
-
-
