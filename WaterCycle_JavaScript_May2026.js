@@ -4,9 +4,7 @@ let posY = 0;
 
 const container = document.getElementById("zoomContainer");
 
-/* =========================
-   ZOOM
-========================= */
+/* ZOOM */
 function zoomIn() {
     scale = Math.min(2.5, scale + 0.2);
     updateTransform();
@@ -27,13 +25,12 @@ function updateTransform() {
     container.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`;
 }
 
-/* =========================
-   DRAG
-========================= */
+/* DRAG STATE */
 let isDragging = false;
 let startX = 0;
 let startY = 0;
 
+/* PC CLICK + DRAG */
 container.addEventListener("mousedown", (e) => {
     if (e.target.closest(".hotspot")) return;
 
@@ -57,7 +54,7 @@ document.addEventListener("mousemove", (e) => {
 
 document.addEventListener("mouseup", stopDrag);
 
-/* TOUCH */
+/* MOBILE TOUCH DRAG */
 container.addEventListener("pointerdown", (e) => {
     if (e.pointerType === "mouse") return;
     if (e.target.closest(".hotspot")) return;
@@ -70,7 +67,8 @@ container.addEventListener("pointerdown", (e) => {
 });
 
 container.addEventListener("pointermove", (e) => {
-    if (!isDragging || e.pointerType === "mouse") return;
+    if (!isDragging) return;
+    if (e.pointerType === "mouse") return;
 
     posX = e.clientX - startX;
     posY = e.clientY - startY;
@@ -81,14 +79,13 @@ container.addEventListener("pointermove", (e) => {
 container.addEventListener("pointerup", stopDrag);
 container.addEventListener("pointercancel", stopDrag);
 
+/* STOP */
 function stopDrag() {
     isDragging = false;
     container.style.cursor = "grab";
 }
 
-/* =========================
-   PANELS
-========================= */
+/* PANELS */
 function openPanel(id) {
     document.getElementById("overlay").classList.add("active");
     document.getElementById(id).classList.add("active");
@@ -102,16 +99,14 @@ function closePanel() {
     });
 }
 
-/* =========================
-   MULTI-PAGE PANELS
-========================= */
+/* PAGES */
 function nextPage(btn) {
     const panel = btn.closest(".panel");
     const pages = panel.querySelectorAll(".page");
 
     let index = [...pages].findIndex(p => p.classList.contains("active"));
-
     pages[index].classList.remove("active");
+
     index = (index + 1) % pages.length;
     pages[index].classList.add("active");
 }
@@ -121,8 +116,8 @@ function prevPage(btn) {
     const pages = panel.querySelectorAll(".page");
 
     let index = [...pages].findIndex(p => p.classList.contains("active"));
-
     pages[index].classList.remove("active");
+
     index = (index - 1 + pages.length) % pages.length;
     pages[index].classList.add("active");
 }
