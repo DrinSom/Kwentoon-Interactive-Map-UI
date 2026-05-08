@@ -238,7 +238,6 @@ html, body {
             background: #dc2626;
         }
 
-
 /* FOR MOBILE */
 
 @media (max-width: 768px) {
@@ -258,14 +257,17 @@ html, body {
         gap: 10px;
         flex: 1;
         min-height: 0;
-        justify-content: center;
     }
 
     /* IMAGE */
     .panel-image {
         flex: none;
-        width: 30%;
-        aspect-ratio: 1/1;
+        width: 50%;
+        aspect-ratio: 1 / 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
     }
 
         .panel-image img {
