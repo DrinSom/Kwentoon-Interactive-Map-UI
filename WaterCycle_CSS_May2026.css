@@ -291,13 +291,13 @@ html, body {
         display: flex;
         flex-direction: column;
         min-height: 0;
-        padding: 10px 20px;
     }
 
         .panel-text h2 {
             font-size: 36px;
             margin: 0;
             text-align: center;
+            padding-right: 10px;
         }
 
         /* SCROLLABLE TEXT BOX */
