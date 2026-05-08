@@ -48,29 +48,29 @@ html, body {
     cursor: pointer;
 }
 
-    .hotspot.small img {
-        width: 9vw;
-        height: auto;
-    }
+.hotspot.small img {
+    width: 9vw;
+    height: auto;
+}
 
-    .hotspot.medium img {
-        width: 12vw;
-        height: auto;
-    }
+.hotspot.medium img {
+    width: 12vw;
+    height: auto;
+}
 
-    .hotspot.large img {
-        width: 16vw;
-        height: auto;
-    }
+.hotspot.large img {
+    width: 16vw;
+    height: auto;
+}
 
-    .hotspot img {
-        transition: transform 0.2s;
-    }
+.hotspot img {
+    transition: transform 0.2s;
+}
 
-    .hotspot:hover img {
-        transform: scale(1.2);
-        filter: drop-shadow(0 0 6px cyan);
-    }
+.hotspot:hover img {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 6px cyan);
+}
 
 /* ZOOM BUTTONS */
 .zoom-controls {
@@ -80,20 +80,20 @@ html, body {
     z-index: 300;
 }
 
-    .zoom-controls button {
-        background: #ff914d;
-        border: none;
-        color: white;
-        width: 40px;
-        height: 40px;
-        margin: 5px;
-        border-radius: 8px;
-        cursor: pointer;
-    }
+.zoom-controls button {
+    background: #ff914d;
+    border: none;
+    color: white;
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+}
 
-        .zoom-controls button:hover {
-            background: #dc2626;
-        }
+.zoom-controls button:hover {
+    background: #dc2626;
+}
 
 /* OVERLAY */
 .overlay {
@@ -104,36 +104,44 @@ html, body {
     z-index: 200;
 }
 
-    .overlay.active {
-        display: block;
-    }
+.overlay.active {
+    display: block;
+}
 
 /* PANEL */
-
 .panel {
     position: fixed;
     top: 50%;
     left: 50%;
-    width: min(700px, 92vw);
-    height: min(420px, 80dvh);
+
+    width: min(760px, 92vw);
+    height: min(500px, 85dvh);
+
     transform: translate(-50%, -50%);
+
     background: #edf8ff;
     border: 6px solid black;
     border-radius: 20px;
+
     padding: 22px;
+
     display: flex;
     flex-direction: column;
+
     overflow: hidden;
+
     z-index: 201;
+
     opacity: 0;
     pointer-events: none;
 }
 
-    .panel.active {
-        opacity: 1;
-        pointer-events: auto;
-    }
+.panel.active {
+    opacity: 1;
+    pointer-events: auto;
+}
 
+/* PANEL CONTENT */
 .panel-content {
     display: flex;
     gap: 24px;
@@ -145,20 +153,23 @@ html, body {
 .panel-image {
     flex: 1;
     min-width: 0;
+
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-    .panel-image img {
-        width: 100%;
-        max-width: 300px;
-        aspect-ratio: 1 / 1;
-        object-fit: cover;
-        border: 5px solid black;
-        border-radius: 0;
-        display: block;
-    }
+.panel-image img {
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    border: 5px solid black;
+
+    display: block;
+}
 
 /* TEXT */
 .panel-text {
@@ -168,38 +179,30 @@ html, body {
     min-height: 0;
 }
 
-    /* TITLE */
-    .panel-text h2 {
-        margin: 0;
-        font-size: 32px;
-        color: #0b1f34;
-    }
+/* TITLE */
+.panel-text h2 {
+    margin: 0;
+    font-size: clamp(22px, 2vw, 32px);
+    color: #0b1f34;
+    line-height: 1.1;
+}
 
-    /* SCROLLABLE CONTENT */
-    .panel-text p {
-        flex: 1;
-        min-height: 0;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
-        font-size: 15px;
-        line-height: 1.5;
-        margin-top: 10px;
-        margin-right: 20px;
-        color: #0b1f34;
-    }
+/* SCROLL TEXT */
+.panel-text p {
+    flex: 1;
+    min-height: 0;
 
-/* MOBILE STACK */
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 
-@media (max-width: 768px) {
-    .panel-content {
-        flex-direction: column;
-    }
+    font-size: 15px;
+    line-height: 1.6;
 
-    .panel-image {
-        flex: none;
-        width: 100%;
-        height: 180px;
-    }
+    margin-top: 12px;
+    margin-right: 8px;
+    padding-right: 8px;
+
+    color: #0b1f34;
 }
 
 /* CLOSE BUTTON */
@@ -207,17 +210,48 @@ html, body {
     position: absolute;
     top: 10px;
     right: 10px;
+
     background: #ff914d;
     border: none;
     color: white;
-    width: 30px;
-    height: 30px;
+
+    width: 34px;
+    height: 34px;
+
+    border-radius: 8px;
+
     cursor: pointer;
 }
 
-    .close-btn:hover {
-        background: #dc2626;
-    }
+.close-btn:hover {
+    background: #dc2626;
+}
+
+/* NAV */
+.panel-nav {
+    position: absolute;
+    bottom: 14px;
+    right: 18px;
+
+    display: flex;
+    gap: 10px;
+}
+
+.panel-nav button {
+    background: #ff914d;
+    border: none;
+    color: white;
+
+    padding: 6px 12px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+}
+
+.panel-nav button:hover {
+    background: #dc2626;
+}
 
 /* PAGES */
 .page {
@@ -225,28 +259,55 @@ html, body {
     height: 100%;
 }
 
-    .page.active {
-        display: block;
-    }
-
-/* NAV */
-.panel-nav {
-    position: absolute;
-    bottom: 10px;
-    right: 15px;
+.page.active {
     display: flex;
-    gap: 10px;
+    flex-direction: column;
 }
 
-    .panel-nav button {
-        background: #ff914d;
-        border: none;
-        color: white;
-        padding: 5px 10px;
-        border-radius: 5px;
-        cursor: pointer;
+/* ========================= */
+/* MOBILE FIX (IMPORTANT) */
+/* ========================= */
+@media (max-width: 768px) {
+
+    .panel {
+        width: 94vw;
+        height: 88dvh;
+        padding: 16px;
+        border-radius: 16px;
     }
 
-        .panel-nav button:hover {
-            background: #dc2626;
-        }
+    .panel-content {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    /* IMAGE CENTER FIX */
+    .panel-image {
+        width: 100%;
+        flex: none;
+    }
+
+    .panel-image img {
+        width: min(220px, 60vw);
+        aspect-ratio: 1 / 1;
+    }
+
+    /* TEXT */
+    .panel-text h2 {
+        text-align: center;
+        font-size: 22px;
+    }
+
+    .panel-text p {
+        font-size: 14px;
+        line-height: 1.6;
+        margin-right: 0;
+    }
+
+    /* NAV FIX */
+    .panel-nav {
+        position: static;
+        margin-top: 10px;
+        justify-content: center;
+    }
+}
