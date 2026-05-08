@@ -241,7 +241,7 @@ html, body {
 
 @media (max-width: 768px) {
 
-    /* PANEL becomes vertical layout */
+    /* VERTICAL on Mobile */
     .panel {
         height: min(90dvh, 650px);
         padding: 16px;
@@ -249,30 +249,31 @@ html, body {
         flex-direction: column;
     }
 
-    /* STACK CONTENT PROPERLY */
+    /* CONTENT STACK */
     .panel-content {
         display: flex;
         flex-direction: column;
         gap: 10px;
         flex: 1;
         min-height: 0;
+        justify-content: center;
     }
 
-    /* IMAGE TOP */
+    /* IMAGE */
     .panel-image {
         flex: none;
         width: 100%;
-        height: 180px;
+        aspect-ratio: 1/1;
     }
 
-    .panel-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border: 5px solid black;
-    }
+        .panel-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: 5px solid black;
+        }
 
-    /* TITLE UNDER IMAGE */
+    /* TITLE */
     .panel-text {
         padding-top: 0;
         flex: 1;
@@ -281,22 +282,22 @@ html, body {
         min-height: 0;
     }
 
-    .panel-text h2 {
-        font-size: 22px;
-        margin: 0;
-        text-align: center;
-    }
+        .panel-text h2 {
+            font-size: 28px;
+            margin: 0;
+            text-align: center;
+        }
 
-    /* SCROLLABLE TEXT BOX */
-    .panel-text p {
-        flex: 1;
-        overflow-y: auto;
-        margin-top: 10px;
-        margin-right: 0;
-        padding-right: 6px;
-        font-size: 14px;
-        line-height: 1.5;
-    }
+        /* SCROLLABLE TEXT BOX */
+        .panel-text p {
+            flex: 1;
+            overflow-y: auto;
+            margin-top: 10px;
+            margin-right: 0;
+            padding-right: 6px;
+            font-size: 20px;
+            line-height: 1.5;
+        }
 
     /* NAV BUTTONS CENTERED */
     .panel-nav {
@@ -307,8 +308,8 @@ html, body {
         gap: 10px;
     }
 
-    .panel-nav button {
-        padding: 6px 12px;
-        font-size: 14px;
-    }
+        .panel-nav button {
+            padding: 6px 12px;
+            font-size: 14px;
+        }
 }
