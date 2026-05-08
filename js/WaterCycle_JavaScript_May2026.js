@@ -30,7 +30,9 @@ let isDragging = false;
 let startX = 0;
 let startY = 0;
 
-/* PC CLICK + DRAG */
+/* =========================
+   PC CLICK + DRAG
+========================= */
 container.addEventListener("mousedown", (e) => {
     if (e.target.closest(".hotspot")) return;
 
@@ -54,7 +56,9 @@ document.addEventListener("mousemove", (e) => {
 
 document.addEventListener("mouseup", stopDrag);
 
-/* MOBILE TOUCH DRAG */
+/* =========================
+   MOBILE TOUCH DRAG
+========================= */
 container.addEventListener("pointerdown", (e) => {
     if (e.pointerType === "mouse") return;
     if (e.target.closest(".hotspot")) return;
@@ -121,3 +125,18 @@ function prevPage(btn) {
     index = (index - 1 + pages.length) % pages.length;
     pages[index].classList.add("active");
 }
+
+/* FOR VARYING DEVICS */
+function loadCSS() {
+    const css = document.getElementById("device-css");
+
+    if (window.innerWidth <= 768) {
+        css.href = "WaterCycle_Mobile_May2026.css";
+    } else {
+        css.href = "WaterCycle_Desktop_May2026.css";
+    }
+}
+
+loadCSS();
+
+window.addEventListener("resize", loadCSS);
