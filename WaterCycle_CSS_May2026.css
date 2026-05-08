@@ -243,7 +243,7 @@ html, body {
 
     /* VERTICAL PANEL */
     .panel {
-        height: min(90dvh, 480px);
+        height: min(90dvh, 250px);
         padding: 16px;
         display: flex;
         flex-direction: column;
@@ -271,7 +271,7 @@ html, body {
         .panel-image img {
             width: 100%;
             height: 100%;
-            aspect-ratio: 1 / 1; /* keeps consistency */
+            aspect-ratio: 1 / 1; 
             object-fit: cover;
             border: 5px solid black;
         }
