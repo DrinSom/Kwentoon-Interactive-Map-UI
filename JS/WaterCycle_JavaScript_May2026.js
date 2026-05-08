@@ -131,9 +131,9 @@ function loadCSS() {
     const css = document.getElementById("device-css");
 
     if (window.innerWidth <= 768) {
-        css.href = "WaterCycle_Mobile_May2026.css";
+        href = "CSS/WaterCycle_Mobile_May2026.css";
     } else {
-        css.href = "WaterCycle_Desktop_May2026.css";
+        href = "CSS/WaterCycle_Desktop_May2026.css";
     }
 }
 
