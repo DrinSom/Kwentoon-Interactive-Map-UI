@@ -258,7 +258,7 @@ html, body {
     .panel-content {
         display: flex;
         flex-direction: column;
-        gap: 5px;
+        gap: 10px;
         padding-top: 35px;
         align-items: center;
     }
