@@ -258,7 +258,7 @@ html, body {
     .panel-content {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 16px;
         padding-top: 35px;
         align-items: center;
     }
@@ -314,7 +314,7 @@ html, body {
         font-size: 11px; 
         line-height: 1.45;
         text-align: justify;
-        width: 90%;
+        width: 75%;
     }
 
     /* NAVIGATION */
