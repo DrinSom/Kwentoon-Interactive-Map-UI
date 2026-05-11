@@ -244,14 +244,12 @@ html, body {
             background: #dc2626;
         }
 
-/* FOR MOBILE */
-
 @media (max-width: 768px) {
 
-    /* VERTICAL on Mobile */
+    /* MOBILE PANEL */
     .panel {
         height: min(90dvh, 650px);
-        padding: 16px;
+        padding: 18px;
         display: flex;
         flex-direction: column;
     }
@@ -260,16 +258,18 @@ html, body {
     .panel-content {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 14px;
         flex: 1;
         min-height: 0;
-        padding-top: 30px;
+        padding-top: 35px;
+        align-items: center;
     }
 
     /* IMAGE */
     .panel-image {
         flex: none;
-        width: 50%;
+        width: 70%; 
+        max-width: 240px;
         aspect-ratio: 1 / 1;
         display: flex;
         justify-content: center;
@@ -277,53 +277,59 @@ html, body {
         margin: 0 auto;
     }
 
-        .panel-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border: 5px solid black;
-        }
+    .panel-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border: 5px solid black;
+    }
 
-    /* TITLE */
+    /* TEXT AREA */
     .panel-text {
-        padding-top: 0;
         flex: 1;
         display: flex;
         flex-direction: column;
         min-height: 0;
+        width: 100%;
+        align-items: center;
     }
 
-        .panel-text h2 {
-            font-size: 34px;
-            margin: 0;
-            text-align: center;
-            padding-right: 10px;
-        }
+    /* TITLE */
+    .panel-text h2 {
+        font-size: 28px; 
+        line-height: 1;
+        margin: 0;
+        text-align: center;
+        font-weight: 800;
+        letter-spacing: 1px;
+    }
 
-        /* SCROLLABLE TEXT BOX */
-        .panel-text p {
-            flex: 1;
-            overflow-y: auto;
-            margin-top: 10px;
-            font-size: 12px;
-            line-height: 1.5;
-            text-align: justify;
-        }
+    /* BODY TEXT */
+    .panel-text p {
+        flex: 1;
+        overflow-y: auto;
+        margin-top: 10px;
+        padding-right: 4px;
+        font-size: 11px; 
+        line-height: 1.45;
+        text-align: justify;
+        width: 90%;
+    }
 
-    /* NAV BUTTONS CENTERED */
+    /* NAVIGATION */
     .panel-nav {
         position: static;
-        margin-top: 5px;
+        margin-top: 8px;
         justify-content: center;
         display: flex;
         gap: 10px;
     }
-        .panel-nav button {
-            padding: 6px 12px;
-            font-size: 14px;
-        }
-}
 
+    .panel-nav button {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+}
 ::-webkit-scrollbar {
     width: 10px;
 }
