@@ -258,10 +258,8 @@ html, body {
     .panel-content {
         display: flex;
         flex-direction: column;
-        gap: 5px;
-        flex: 1;
-        min-height: 0;
-        padding-top: 35px;
+        gap: 4px;
+        padding-top: 20px;
         align-items: center;
     }
 
@@ -290,6 +288,11 @@ html, body {
         flex-direction: column;
         width: 100%;
         align-items: center;
+
+        flex: unset;
+        min-height: unset;
+        padding-top: 0;
+        margin-top: 0;
     }
 
     /* TITLE */
