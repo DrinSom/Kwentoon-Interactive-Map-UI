@@ -36,6 +36,7 @@ html, body {
 /* ZOOM CONTAINER */
 #zoomContainer {
     cursor: grab;
+    touch-action: none;
 }
 
 /* HOTSPOTS */
